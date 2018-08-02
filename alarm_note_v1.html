@@ -1,9 +1,8 @@
 <!-- Alarm note_v1 bu Ruben sarkisyan-->
-<DOCTYPE html>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Тренировка ява скрипт</title>
+	<title>Сигнальный блокнот</title>
 	<meta charset="utf-8">
 	<style type="text/css">
 
@@ -33,18 +32,16 @@
 		}
 		.box{
 			border: 1px black solid;
-			width: 750px;
+			width: 760px;
 			background: #DEB887;
 			background:           #FFA07A;
 			background:        #DEB887
 
 		}
 		.time{
-			width: 70px
-		}
-#st{
-	
+			width: 70px	
 }
+
 #end, #end2,#end3,#end4,#end5{
 	color: red;
 	font-size: 120%
@@ -118,7 +115,11 @@ var a4
 var b4
 var a5
 var b5
-
+function sound() {
+  var audio = new Audio(); // Создаём новый элемент Audio
+  audio.src = 'D:/muz/alrm_note.mp3'; // Указываем путь к звуку "клика"
+  audio.autoplay = true; // Автоматически запускаем
+}
 function alarm_note(){
 function alarm(){
 
@@ -128,7 +129,11 @@ var callNotification = new Notification("Пора звонить", {
 });
 document.getElementById("st").innerHTML=" "
 document.getElementById("end").innerHTML="Звонить!!!"
+sound()
 }
+
+
+
 setTimeout(alarm, a*60000)
 }
 
@@ -143,6 +148,7 @@ var callNotification2 = new Notification("Пора звонить", {
 
 document.getElementById("st2").innerHTML=" "
 document.getElementById("end2").innerHTML="Звонить!!!"
+sound()
 }
 setTimeout(alarm2, a2*60000)
 }
@@ -157,6 +163,7 @@ var callNotification3 = new Notification("Пора звонить", {
 
 document.getElementById("st3").innerHTML=" "
 document.getElementById("end3").innerHTML="Звонить!!!"
+sound()
 }
 setTimeout(alarm3, a3*60000)
 }
@@ -171,6 +178,7 @@ var callNotification4 = new Notification("Пора звонить", {
 
 document.getElementById("st4").innerHTML=" "
 document.getElementById("end4").innerHTML="Звонить!!!"
+sound()
 }
 setTimeout(alarm4, a4*60000)
 }
@@ -185,6 +193,7 @@ var callNotification5 = new Notification("Пора звонить", {
 
 document.getElementById("st5").innerHTML=" "
 document.getElementById("end5").innerHTML="Звонить!!!"
+sound()
 }
 setTimeout(alarm5, a5*60000)
 }
